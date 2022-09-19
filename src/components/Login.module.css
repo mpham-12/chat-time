@@ -1,0 +1,44 @@
+.login {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 600px;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	width: 300px;
+}
+
+.title{
+  font-size: 30px;
+  color: #ccd1be;
+}
+
+.label{
+  font-size: 20px;
+  color: #ccd1be;
+}
+
+.input{
+  margin-bottom: 25px;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 0px;
+}
+
+.signup{
+  padding: 0;
+  margin: 0;
+  color: #ccd1be;
+  font-weight: 300;
+}
+
+#getStarted{
+  color: white;
+  font-weight: 400;
+}
