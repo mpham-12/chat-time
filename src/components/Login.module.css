@@ -16,6 +16,7 @@
 .title{
   font-size: 30px;
   color: #ccd1be;
+
 }
 
 .label{
@@ -41,4 +42,25 @@
 #getStarted{
   color: white;
   font-weight: 400;
+}
+
+.createAccBtn{
+  background-color: #ccd1be;
+  color: rgb(20,52,44);
+  font-size: 15px;
+  border: 1px solid #ccd1be;
+  text-align: center;
+  width: 60%;
+  padding: 15px 10px;
+  border-radius: 25px;
+  margin-top: 15px;
+}
+.createAccBtn:hover{
+cursor: pointer;
+}
+.createAcc{
+  text-align: center;
+}
+#title{
+  margin-top: 150px;
 }
