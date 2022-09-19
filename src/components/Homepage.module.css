@@ -1,0 +1,37 @@
+.homepage{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+}
+
+.header{
+  text-align: center
+}
+
+.title{
+  font-size: 40px;
+  color: rgb(204,209,190);
+  margin-bottom: 10px;
+}
+
+.description{
+  font-size: 20px;
+  color: rgb(204,209,190);
+  margin-bottom: 80px;
+  margin-top: 0px;
+}
+
+.getStarted{
+  font-size: 18px;
+  background-color:  rgb(204,209,190);
+  padding: 15px 35px;
+  border-radius: 25px;
+  color: rgb(20,52,44);
+  text-decoration: none;
+}
+
+.chatBubble{
+  height: 25px;
+  margin-left: 5px;
+}

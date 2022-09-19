@@ -27,6 +27,10 @@ color: rgb(204,209,190);
 font-family: 'Reem Kufi Fun', sans-serif;
 }
 
+.navAnchor{
+  text-decoration: none;
+}
+
 .navLinks{
   display: flex;
 flex-direction: row;
