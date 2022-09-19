@@ -1,0 +1,40 @@
+nav{
+  display: flex;
+  background-color: rgb(20,52,44);
+  border-bottom: 1px solid rgb(140,148,135);
+  position: fixed;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  width: 95%;
+}
+
+.navLeft{
+  display: flex;
+  justify-content: end;
+  width: 55%;
+}
+.navRight{
+  display: flex;
+  justify-content: end;
+  padding-right: 20px;
+  width: 45%;
+}
+
+.navName{
+color: rgb(204,209,190);
+font-family: 'Reem Kufi Fun', sans-serif;
+}
+
+.navLinks{
+  display: flex;
+flex-direction: row;
+list-style: none;
+align-items: center;
+}
+
+.navLink{
+  margin-right: 10px;
+  color: rgb(204,209,190);
+}
