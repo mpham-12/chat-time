@@ -8,7 +8,7 @@ const Homepage = () => {
         <h2 className={classes.title}>It's never too late.</h2>
         <p className={classes.description}>We're here for you. Talk with a licensed, professional therapist online for free.
         <img className={classes.chatBubble} src={chat} alt="" /></p>
-        <a href="" className={classes.getStarted}>Get Started</a>
+        <a href="/signup" className={classes.getStarted}>Get Started</a>
       </div>
     </section>
   );

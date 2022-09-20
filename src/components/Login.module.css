@@ -37,11 +37,14 @@
   margin: 0;
   color: #ccd1be;
   font-weight: 300;
+  margin-top: 25px;
 }
 
 #getStarted{
   color: white;
   font-weight: 400;
+  margin-top: 0;
+
 }
 
 .createAccBtn{
