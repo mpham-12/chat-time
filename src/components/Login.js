@@ -22,7 +22,7 @@ const Login = () => {
       setError('');
       setIsLoading(true);
       await login(emailRef.current.value, passwordRef.current.value);
-      navigate('/')
+      navigate('/chat')
     } catch (event) {
       console.log(event)
       setError('Login failed.');

@@ -1,6 +1,23 @@
 import classes from './Nav.module.css'
+import { useAuth } from '../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 const Nav = () => {
+  const [error, setError] = useState('');
+  const { logout, currentUser } = useAuth();
+  const navigate = useNavigate();
+
+  const logoutHandler = async () => {
+    setError('')
+    try {
+      await logout()
+      navigate('/login')
+    } catch {
+      setError('Failed to logout')
+    }
+  }
+
   return (
     <nav>
       <div className={classes.navLeft}></div>
@@ -9,9 +26,13 @@ const Nav = () => {
       </div>
       <div className={classes.navRight}>
         <ul className={classes.navLinks}>
-          <a className={classes.navAnchor} href=""><li className={classes.navLink}>Chat</li></a>
-          <a className={classes.navAnchor} href="/login"><li className={classes.navLink}>Login</li></a>
-          <a className={classes.navAnchor} href=""><li className={classes.navLink}>Logout</li></a>
+          {currentUser && <a className={classes.navAnchor} href="/chat"><li className={classes.navLink}>Chat</li></a>}
+         {!currentUser && <a className={classes.navAnchor} href="/login"><li className={classes.navLink}>Login</li></a>}
+          {currentUser && <button
+            className={classes.navAnchor}
+            id={classes.logout}
+            onClick={logoutHandler}>
+            Logout</button>}
         </ul>
       </div>
     </nav>
