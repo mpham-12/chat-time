@@ -18,6 +18,9 @@ export const AuthProvider = ({ children }) => {
   function login(email, password) {
     return methods.signInWithEmailAndPassword(auth, email, password);
   }
+  function forgotPassword() {
+    return methods.signOut(auth);
+  }
   function logout() {
     return methods.signOut(auth);
   }
@@ -34,6 +37,7 @@ export const AuthProvider = ({ children }) => {
     signup,
     login,
     logout,
+    forgotPassword
   }
   return (
     <AuthContext.Provider value={value}>

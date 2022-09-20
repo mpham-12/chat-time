@@ -5,6 +5,7 @@ import Homepage from "./components/Homepage";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Chat from "./components/Chat";
+import ForgotPassword from "./components/ForgotPassword";
 import './App.css';
 import { AuthProvider } from "./context/AuthContext";
 
@@ -18,6 +19,7 @@ function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
           <Route path='/chat' element={<Chat />} />
+          <Route path='/forgot-password' element={<ForgotPassword />} />
         </Routes>
       </Router>
     </AuthProvider>
