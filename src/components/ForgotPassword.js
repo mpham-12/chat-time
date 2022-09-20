@@ -15,15 +15,19 @@ const ForgotPassword = () => {
   async function submitHandler(event) {
     event.preventDefault()
 
+    if (!emailRef.current.value.includes('@')) {
+      return setError('Email must contain an "@" symbol')
+    }
+
     try {
       setError('');
       setMessage('');
       setIsLoading(true);
       await forgotPassword(emailRef.current.value);
-      setMessage('A password reset link has been sent to your email');
+      setMessage('A password reset link has been sent to your email.');
     } catch (event) {
       console.log(event)
-      setError('The email you entered does not exist in our system');
+      setError('The email you entered does not exist in our system.');
     }
     emailRef.current.value = "";
     setIsLoading(false)
@@ -32,11 +36,11 @@ const ForgotPassword = () => {
   return (
     <section className={classes.forgotPassword}>
       <h2 className={classes.title}>Reset My Password</h2>
-      {message && <p>{message}</p>}
-      {error && <p>{error}</p>}
+      {message && <p className={classes.error}>{message}</p>}
+      {error && <p className={classes.error}>{error}</p>}
       <form className={classes.form} onSubmit={submitHandler}>
         <label htmlFor="email" className={classes.label}>E-mail</label>
-        <input className={classes.input} type="email" ref={emailRef}/>
+        <input className={classes.input} type="text" ref={emailRef}/>
 
         <div className={classes.resetPass}>
         <button disabled={isLoading} className={classes.resetBtn}>Reset Password</button>

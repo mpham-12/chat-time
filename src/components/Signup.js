@@ -18,13 +18,13 @@ const Signup = () => {
   async function handleSubmit(e) {
     e.preventDefault();
     if (passRef.current.value !== confirmPassRef.current.value) {
-      return setError('Passwords do not match')
+      return setError('Passwords do not match.')
     }
     if (passRef.current.value.length <6) {
-      return setError('Password must be 6 or more characters')
+      return setError('Password must be 6 or more characters.')
     }
     if (!emailRef.current.value.includes('@')) {
-      return setError('Email must contain an "@" symbol')
+      return setError('Email must contain an "@" symbol.')
     }
     try {
       setError('')
@@ -45,7 +45,7 @@ const Signup = () => {
   return (
     <section className={classes.login}>
       <h2 className={classes.title} id={classes.title}>Let's Get Started</h2>
-      {error && <p>{error}</p>}
+      {error && <p className={classes.error}>{error}</p>}
       <form className={classes.form} onSubmit={handleSubmit}>
         <label htmlFor="username" className={classes.label}>Username</label>
         <input className={classes.input} type="text" ref={userRef} required />

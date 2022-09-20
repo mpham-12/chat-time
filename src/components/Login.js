@@ -25,7 +25,7 @@ const Login = () => {
       navigate('/chat')
     } catch (event) {
       console.log(event)
-      setError('Login failed.');
+      setError('The e-mail/password you entered is incorrect.');
     }
     setIsLoading(false)
   };
@@ -33,7 +33,7 @@ const Login = () => {
   return (
     <section className={classes.login}>
       <h2 className={classes.title}>Log in</h2>
-      {error && <p>{error}</p>}
+      {error && <p className={classes.error}>{error}</p>}
       <form className={classes.form} onSubmit={submitHandler}>
         <label htmlFor="email" className={classes.label}>E-mail</label>
         <input className={classes.input} type="email" ref={emailRef}/>
