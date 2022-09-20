@@ -1,5 +1,4 @@
 import {useRef, useState} from 'react';
-import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 import classes from './ForgotPassword.module.css'
@@ -7,32 +6,33 @@ import classes from './ForgotPassword.module.css'
 const ForgotPassword = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const [message, setMessage] = useState('');
 
   const emailRef = useRef();
-  const passwordRef = useRef();
   
-  const { login } = useAuth();
-
-  const navigate = useNavigate()
+  const { forgotPassword } = useAuth();
 
   async function submitHandler(event) {
     event.preventDefault()
 
     try {
       setError('');
+      setMessage('');
       setIsLoading(true);
-      await login(emailRef.current.value, passwordRef.current.value);
-      navigate('/chat')
+      await forgotPassword(emailRef.current.value);
+      setMessage('A password reset link has been sent to your email');
     } catch (event) {
       console.log(event)
-      setError('Login failed.');
+      setError('The email you entered does not exist in our system');
     }
+    emailRef.current.value = "";
     setIsLoading(false)
   };
 
   return (
     <section className={classes.forgotPassword}>
       <h2 className={classes.title}>Reset My Password</h2>
+      {message && <p>{message}</p>}
       {error && <p>{error}</p>}
       <form className={classes.form} onSubmit={submitHandler}>
         <label htmlFor="email" className={classes.label}>E-mail</label>

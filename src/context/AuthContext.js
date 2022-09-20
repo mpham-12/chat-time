@@ -18,8 +18,8 @@ export const AuthProvider = ({ children }) => {
   function login(email, password) {
     return methods.signInWithEmailAndPassword(auth, email, password);
   }
-  function forgotPassword() {
-    return methods.signOut(auth);
+  function forgotPassword(email) {
+    return methods.sendPasswordResetEmail(auth, email);
   }
   function logout() {
     return methods.signOut(auth);
