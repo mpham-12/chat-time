@@ -1,0 +1,11 @@
+.chatbox{
+  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(254, 247, 237); */
+  border-radius: 12px;
+  height: 90%;
+  width: 60%;
+  margin-right: 15px;
+  padding: 15px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+  overflow: scroll;
+}
