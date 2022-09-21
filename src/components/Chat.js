@@ -9,7 +9,6 @@ const Chat = () => {
   console.log(currentUser)
   return (
     <section className={classes.chat}>
-      <h2>chat</h2>
       <div className={classes.chatbox}>
       <UsersList/>
       <ChatBox/>

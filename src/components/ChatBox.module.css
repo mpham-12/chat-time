@@ -1,11 +1,69 @@
-.chatbox{
-  background-color: rgb(255, 255, 255);
-  /* background-color: rgb(254, 247, 237); */
+.chatbox {
+	background-color: rgb(255, 255, 255);
+	/* background-color: rgb(254, 247, 237); */
+	border-radius: 12px;
+	height: 90%;
+	width: 60%;
+	margin-right: 15px;
+	padding: 15px;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+}
+
+.chatDisplay {
+	overflow: scroll;
+	position: relative;
+	height: 70%;
+  background-color: rgb(247, 247, 247);
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
   border-radius: 12px;
-  height: 90%;
-  width: 60%;
-  margin-right: 15px;
-  padding: 15px;
+
+}
+
+.textbox {
+	display: flex;
+	flex-direction: row;
+	/* border: 1px solid black; */
+	margin-top: 20px;
+	height: 22%;
+  width: 100%;
+	border-radius: 12px;
+	background-color: none;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
-  overflow: scroll;
+}
+
+
+.input {
+  height: 80%;
+  width: 90%;
+	border-radius: 12px 0px 0px 12px;
+	border: 1px solid transparent;
+	resize: none;
+	padding: 10px;
+	font-family: 'Lato', sans-serif;
+	background-color: rgb(247, 247, 247);
+	margin-bottom: 20px;
+}
+
+.input:focus{
+  outline:none;
+}
+
+.sendIcon {
+	background-color: transparent;
+	height: 30px;
+  padding: 0px 15px;
+  /* margin-left: 5px; */
+
+}
+.sendBtn {
+	display: flex;
+  border-radius: 0px 12px 12px 0px;
+	align-items: center;
+	justify-content: end;
+	background-color: rgb(57, 138, 97);
+	border: none;
+	color: white;
+}
+.sendBtn:hover{
+cursor: pointer;
 }
