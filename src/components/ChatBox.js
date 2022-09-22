@@ -7,6 +7,7 @@ import { collection, orderBy, limit, query, setDoc, doc, serverTimestamp, where 
 import ChatMessage from './ChatMessage';
 import { useRef } from 'react';
 import { FirebaseError } from 'firebase/app';
+import { v4 as uuidv4 } from 'uuid';
 
 
 const ChatBox = (props) => {
@@ -16,12 +17,13 @@ const ChatBox = (props) => {
   const [messages] = useCollectionData(messagesQuery, { idField: 'id' });
 
   const inputRef = useRef();
+  const bottomRef = useRef();
   const { currentUser } = useAuth();
 
   const submitHandler = async (e) => {
     e.preventDefault();
     const createdAt = new Date().toLocaleString('en-US', { hour: "2-digit", minute: "2-digit" });
-    const msgId = Math.floor(Math.random() * 10)
+    const msgId = uuidv4();
 
 
     await setDoc(doc(messagesRef), {
@@ -33,6 +35,7 @@ const ChatBox = (props) => {
 
 
     inputRef.current.value = '';
+    bottomRef.current.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
@@ -42,6 +45,7 @@ const ChatBox = (props) => {
           console.log('MSG', message.uid)
           return <ChatMessage key={message.msgId} message={message} />
         })}
+        <div className='bottomOfChat' ref={bottomRef}></div>
       </div>
       {/* <div className={classes.textbox}> */}
       <form className={classes.textbox} onSubmit={submitHandler}>
