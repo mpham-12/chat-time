@@ -5,6 +5,8 @@ import { firestore, auth } from '../firebase';
 import { useAuth } from '../context/AuthContext';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { collection, setDoc, doc } from "firebase/firestore";
+import { updateProfile } from 'firebase/auth';
+
 
 const Signup = () => {
   const [error, setError] = useState('');
@@ -44,6 +46,9 @@ console.log('users', users)
       setError('')
       setLoading(true);
       await signup(emailRef.current.value, passRef.current.value);
+      updateProfile(auth.currentUser, {
+        displayName: userRef.current.value
+      });
       await setDoc(doc(usersDb), {
         username: userRef.current.value
       });
