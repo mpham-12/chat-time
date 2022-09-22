@@ -10,8 +10,8 @@ const Signup = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const userDb = collection(firestore, "users");
-  const [users] = useCollectionData(userDb);
+  const usersDb= collection(firestore, "users");
+  const [users] = useCollectionData(usersDb);
 
   const userRef = useRef();
   const emailRef = useRef();
@@ -44,6 +44,9 @@ console.log('users', users)
       setError('')
       setLoading(true);
       await signup(emailRef.current.value, passRef.current.value);
+      await setDoc(doc(usersDb), {
+        username: userRef.current.value
+      });
       navigate('/login');
     } catch (e) {
       console.log(e)

@@ -9,4 +9,12 @@
   box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
   width: 30%;
   overflow: scroll;
+  display: flex;
+  flex-direction: column;
 }
+
+.users{
+display: flex;
+flex-direction: column;
+}
+

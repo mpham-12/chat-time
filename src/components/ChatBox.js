@@ -3,7 +3,7 @@ import { auth, firestore } from '../firebase';
 import { useAuth } from '../context/AuthContext';
 import send from '../images/send.png'
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import { collection, orderBy, limit, query, setDoc, doc, serverTimestamp, where } from "firebase/firestore";
+import { collection, orderBy, limit, query, setDoc, doc} from "firebase/firestore";
 import ChatMessage from './ChatMessage';
 import { useRef } from 'react';
 import { FirebaseError } from 'firebase/app';
@@ -49,7 +49,7 @@ const ChatBox = (props) => {
       </div>
       {/* <div className={classes.textbox}> */}
       <form className={classes.textbox} onSubmit={submitHandler}>
-        <textarea type="text" className={classes.input} ref={inputRef} />
+        <textarea type="text" className={classes.input} ref={inputRef} placeholder="Type your message..." />
         <button className={classes.sendBtn}><img className={classes.sendIcon} src={send} alt="" /></button>
       </form>
       {/* </div> */}
