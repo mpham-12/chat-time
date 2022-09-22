@@ -24,11 +24,9 @@ const UsersList = () => {
         <p className={classes.liveChat}>Live Chat</p>
         <h2 className={classes.displayName}>{currentUser.displayName}</h2>
       </div>
-      <form>
+      <form className={classes.form}>
         <div className={classes.search}>
-          <input
-            placeholder="Search..."
-            onChange={searchHandler} />
+          <input className={classes.searchInput} placeholder="Search" onChange={searchHandler} />
         </div>
       </form>
       <div className={classes.users}>
