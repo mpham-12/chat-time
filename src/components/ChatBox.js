@@ -3,7 +3,7 @@ import { auth, firestore } from '../firebase';
 import { useAuth } from '../context/AuthContext';
 import send from '../images/send.png'
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import { collection, orderBy, limit, query, setDoc, doc} from "firebase/firestore";
+import { collection, orderBy, limit, query, setDoc, doc, serverTimestamp } from "firebase/firestore";
 import ChatMessage from './ChatMessage';
 import { useRef } from 'react';
 import { FirebaseError } from 'firebase/app';
@@ -22,13 +22,13 @@ const ChatBox = (props) => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    const createdAt = new Date().toLocaleString('en-US', { hour: "2-digit", minute: "2-digit" });
+    // const createdAt = new Date().toLocaleString('en-US', { hour: "2-digit", minute: "2-digit" });
     const msgId = uuidv4();
 
 
     await setDoc(doc(messagesRef), {
       text: inputRef.current.value,
-      createdAt,
+      createdAt: serverTimestamp(),
       uid: currentUser.uid,
       msgId,
     })
@@ -42,7 +42,6 @@ const ChatBox = (props) => {
     <div className={classes.chatbox}>
       <div className={classes.chatDisplay}>
         {messages && messages.map((message) => {
-          console.log('MSG', message.uid)
           return <ChatMessage key={message.msgId} message={message} />
         })}
         <div className='bottomOfChat' ref={bottomRef}></div>

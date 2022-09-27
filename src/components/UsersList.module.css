@@ -49,6 +49,9 @@ padding: 10px 15px;
 .searchInput:focus::placeholder {
   color: transparent;
 }
+.searchInput:focus {
+  outline:none;
+}
 
 .search{
   display: flex;
