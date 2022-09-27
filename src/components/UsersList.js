@@ -17,7 +17,9 @@ const UsersList = () => {
     setSearch(e.target.value)
   }
 
+  const selectUserHandler = () => {
 
+  }
   return (
     <div className={classes.list}>
       <div className={classes.usersHeader}>
@@ -31,13 +33,13 @@ const UsersList = () => {
       </form>
       <div className={classes.users}>
 
-        {users && !search && users.map(user => <div key={user.username} className={classes.user}>{user.username}</div>)}
+        {users && !search && users.map(user => <div onClick={selectUserHandler} tabindex="0" key={user.username} className={classes.user}>{user.username}</div>)}
         {users && search && users.filter((user) => {
           if (user.username.toLowerCase().includes(search.toLowerCase())) {
             return user
           }
         }).map((user) => {
-          return <div key={user.username} className={classes.user}>{user.username}</div>
+          return <div onClick={selectUserHandler} key={user.username} tabindex="0" className={classes.user}>{user.username}</div>
         })}
 
 

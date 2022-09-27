@@ -21,6 +21,10 @@ display: flex;
 flex-direction: column;
 }
 
+.user:focus{
+background-color: yellow;
+}
+
 .usersHeader{
   display: flex;
   align-items: center;
