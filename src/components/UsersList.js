@@ -1,13 +1,13 @@
 import classes from './UsersList.module.css'
-import { auth, firestore } from '../firebase';
-import { collection, orderBy, limit, query, setDoc, doc } from "firebase/firestore";
+import { firestore } from '../firebase';
+import { collection} from "firebase/firestore";
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { useAuth } from '../context/AuthContext';
 import { useState } from 'react';
 
 
 
-const UsersList = () => {
+const UsersList = (props) => {
   const [search, setSearch] = useState('')
   const usersRef = collection(firestore, "users");
   const [users] = useCollectionData(usersRef, { idField: 'id' });
@@ -17,10 +17,10 @@ const UsersList = () => {
     setSearch(e.target.value)
   }
 
-  const selectUserHandler = () => {
+console.log(currentUser)
 
-  }
   return (
+  
     <div className={classes.list}>
       <div className={classes.usersHeader}>
         <p className={classes.liveChat}>Live Chat</p>
@@ -33,13 +33,20 @@ const UsersList = () => {
       </form>
       <div className={classes.users}>
 
-        {users && !search && users.map(user => <div onClick={selectUserHandler} tabindex="0" key={user.username} className={classes.user}>{user.username}</div>)}
-        {users && search && users.filter((user) => {
+        {users && users.filter((user) => {
+          if(!search) {
+            return user
+          }
           if (user.username.toLowerCase().includes(search.toLowerCase())) {
             return user
           }
         }).map((user) => {
-          return <div onClick={selectUserHandler} key={user.username} tabindex="0" className={classes.user}>{user.username}</div>
+          return <div 
+          key={user.username} 
+          tabIndex="0" 
+          className={classes.user}
+          onClick={() => {props.onSelectUser(currentUser.displayName, user.username)}}
+          >{user.username}</div>
         })}
 
 
