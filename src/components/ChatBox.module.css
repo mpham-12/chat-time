@@ -43,6 +43,7 @@ flex-direction: column; */
 	font-family: 'Lato', sans-serif;
 	background-color: rgb(247, 247, 247);
 	margin-bottom: 20px;
+	word-break: break-word;
 }
 
 .input:focus{

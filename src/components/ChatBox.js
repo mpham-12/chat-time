@@ -23,7 +23,7 @@ const ChatBox = (props) => {
 
   useEffect(()=>{
     bottomRef.current.scrollIntoView({ behavior: 'smooth' })
-  }, messages)  
+  }, [messages])  
 
   const submitHandler = async (e) => {
     e.preventDefault();
@@ -37,7 +37,6 @@ const ChatBox = (props) => {
       msgId,
       chatroomId: props.chatroomId
     })
-
 
     inputRef.current.value = '';
     bottomRef.current.scrollIntoView({ behavior: 'smooth' })
@@ -55,8 +54,8 @@ const ChatBox = (props) => {
       </div>
       {/* <div className={classes.textbox}> */}
       <form className={classes.textbox} onSubmit={submitHandler}>
-        <textarea type="text" className={classes.input} ref={inputRef} placeholder="Type your message..." />
-        <button className={classes.sendBtn}><img className={classes.sendIcon} src={send} alt="" /></button>
+        <textarea type="text" className={classes.input} ref={inputRef} placeholder="Type your message..."/>
+        <button className={classes.sendBtn} type="submit"><img className={classes.sendIcon} src={send} alt=""/></button>
       </form>
       {/* </div> */}
     </div>
