@@ -21,12 +21,14 @@ const ChatBox = (props) => {
   const bottomRef = useRef();
   const { currentUser } = useAuth();
 
+  useEffect(()=>{
+    bottomRef.current.scrollIntoView({ behavior: 'smooth' })
+  }, messages)  
 
   const submitHandler = async (e) => {
     e.preventDefault();
     // const createdAt = new Date().toLocaleString('en-US', { hour: "2-digit", minute: "2-digit" });
     const msgId = uuidv4();
-
 
     await setDoc(doc(messagesRef), {
       text: inputRef.current.value,
