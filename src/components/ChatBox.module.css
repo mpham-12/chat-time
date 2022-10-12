@@ -16,7 +16,8 @@
   background-color: rgb(247, 247, 247);
 	box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
   border-radius: 12px;
-
+	/* display: flex;
+flex-direction: column; */
 }
 
 .textbox {

@@ -49,11 +49,12 @@ const Chat = () => {
     <section className={classes.chat}>
       <div className={classes.chatbox}>
         <UsersList onSelectUser={selectUserHandler} />
-        {chatroomId && <ChatBox chatroomId={chatroomId} />}
+        <ChatBox chatroomId={chatroomId} />
+        {/* {chatroomId && <ChatBox chatroomId={chatroomId} />} */}
       </div>
 
       {!currentUser && <p>you must be logged in to use better health</p>}
-      {currentUser && <p>hey, {currentUser.email}</p>}
+      {/* {currentUser && <p>hey, {currentUser.email}</p>} */}
     </section>
   );
 }
