@@ -41,6 +41,9 @@ console.log(currentUser)
             return user
           }
         }).map((user) => {
+          if (user.username === currentUser.displayName) {
+            return null
+          }
           return <div 
           key={user.username} 
           tabIndex="0" 
