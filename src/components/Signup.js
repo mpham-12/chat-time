@@ -51,7 +51,7 @@ const Signup = () => {
       await setDoc(doc(usersDb), {
         username: userRef.current.value
       });
-      navigate('/login');
+      navigate('/chat');
     } catch (e) {
       setError('Failed to create an account');
     }
