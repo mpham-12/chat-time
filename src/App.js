@@ -1,19 +1,18 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
+import { AuthProvider } from "./context/AuthContext";
 import Nav from "./components/Nav";
 import Homepage from "./components/Homepage";
 import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Chat from "./components/Chat";
 import ForgotPassword from "./components/ForgotPassword";
-import './App.css';
-import { AuthProvider } from "./context/AuthContext";
 
 function App() {
   return (
     <AuthProvider>
       <Router>
-      <Nav />
+        <Nav />
         <Routes>
           <Route exact path='/' element={<Homepage />} />
           <Route path='/login' element={<Login />} />

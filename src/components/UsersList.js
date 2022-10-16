@@ -35,7 +35,7 @@ console.log(currentUser)
       </form>
       <div className={classes.users}>
 
-        {users && users.filter((user) => {
+        {currentUser && users && users.filter((user) => {
           if(!search) {
             return user
           }

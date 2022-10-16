@@ -48,14 +48,12 @@ const Chat = () => {
 
   return (
     <section className={classes.chat}>
-      <div className={classes.chatbox}>
+      {!currentUser ? <p className={classes.errorMsg}>You must be logged in to use Chat Time.</p> : <div className={classes.chatbox}>
         <UsersList onSelectUser={selectUserHandler} />
-        {/* <ChatBox chatroomId={chatroomId} /> */}
         {chatroomId ? <ChatBox chatroomId={chatroomId}/> : <EmptyChat/>}
-      </div>
+      </div>}
 
-      {!currentUser && <p>you must be logged in to use better health</p>}
-      {/* {currentUser && <p>hey, {currentUser.email}</p>} */}
+
     </section>
   );
 }
