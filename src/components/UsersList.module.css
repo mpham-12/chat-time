@@ -1,72 +1,91 @@
-.list{
-  background-color: rgb(255, 255, 255);
-  /* background-color: rgb(254, 247, 237); */
-  border-radius: 12px;
-  height: 94.5%;
-  margin-left: 15px;
-  margin-right: 10px;
+.list {
+	background-color: rgb(255, 255, 255);
+	/* background-color: rgb(254, 247, 237); */
+	border-radius: 12px;
+	height: 94.5%;
+	margin-left: 15px;
+	margin-right: 10px;
 
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
-  width: 30%;
-  overflow: scroll;
-  display: flex;
-  flex-direction: column;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+	width: 30%;
+	overflow: scroll;
+	display: flex;
+	flex-direction: column;
 }
 
-.users{
-  padding: 15px 0px;
-  line-height: 25px;
-  word-break: break-word;
+.users {
+	padding: 15px 0px;
+	line-height: 25px;
+	word-break: break-word;
 }
-.user{
-display: flex;
-flex-direction: column;
-padding: 0px 20px;
-}
-
-.user:focus{
-background-color: rgb(230, 230, 230);
-padding: 2px 10px;
-color: rgb(57, 138, 97);
+.user {
+	display: flex;
+	flex-direction: column;
+	padding: 0px 20px;
 }
 
-.usersHeader{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(57, 138, 97);
-color: white;
-padding: 10px 15px;
-
+.user:focus {
+	background-color: rgb(230, 230, 230);
+	padding: 2px 10px;
+	color: rgb(57, 138, 97);
 }
 
-.liveChat{
-  font-weight: 900;
-}
-.displayName{
-  font-weight: 300;
-  font-size: 20px;
+.usersHeader {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgb(57, 138, 97);
+	color: white;
+	padding: 10px 15px;
 }
 
-.searchInput{
-  border-radius: 25px;
-  border: 1px solid grey;
-  text-align: center;
-  width: 80%;
-  padding: 8px 12px;
-  margin-top: 8px;
+.liveChat {
+	font-weight: 900;
+}
+.displayName {
+	font-weight: 300;
+	font-size: 20px;
+}
+
+.searchInput {
+	border-radius: 25px;
+	border: 1px solid grey;
+	text-align: center;
+	width: 80%;
+	padding: 8px 12px;
+	margin-top: 8px;
 }
 .searchInput:focus::placeholder {
-  color: transparent;
+	color: transparent;
 }
 .searchInput:focus {
-  outline:none;
+	outline: none;
 }
 
-.search{
-  display: flex;
-  justify-content: center;
-  /* text-align: center; */
-  /* width: 100%; */
+.search {
+	display: flex;
+	justify-content: center;
+	/* text-align: center; */
+	/* width: 100%; */
+}
 
+@media only screen and (max-width: 600px) {
+	.usersHeader {
+		padding: 5px;
+	}
+	.liveChat {
+		margin: 0;
+	}
+	.list {
+		width: 90%;
+		margin: 0;
+    margin-bottom: 1px;
+		max-height: 30%;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+    
+	}
+	.users {
+		text-align: center;
+	}
 }

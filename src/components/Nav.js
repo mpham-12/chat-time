@@ -21,15 +21,15 @@ const Nav = () => {
   return (
     <nav>
       <div className={classes.navLeft}>
-        <p className={classes.displayName}>{currentUser.displayName.charAt(0).toUpperCase() + currentUser.displayName.slice(1)}</p>
-      </div>
+        {currentUser && <p className={classes.displayName}>{currentUser.displayName}</p>}
+</div>
       <div className={classes.navMiddle}>
         <a href="/" className={classes.navAnchor}><h1 className={classes.navName}>Chat Time</h1></a>
       </div>
       <div className={classes.navRight}>
         <ul className={classes.navLinks}>
           {currentUser && <a className={classes.navAnchor} href="/chat"><li className={classes.navLink}>Chat</li></a>}
-         {!currentUser && <a className={classes.navAnchor} href="/login"><li className={classes.navLink}>Login</li></a>}
+          {!currentUser && <a className={classes.navAnchor} href="/login"><li className={classes.navLink}>Login</li></a>}
           {currentUser && <button
             className={classes.navAnchor}
             id={classes.logout}

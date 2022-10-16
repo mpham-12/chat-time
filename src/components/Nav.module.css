@@ -65,3 +65,17 @@ font-size: 18px;
   color: rgb(204,209,190);
 
 }
+
+
+
+
+  @media only screen and (max-width: 600px) {
+    .navAnchor{
+display: flex;
+align-items: center;
+}
+    .navName{
+ font-size: 120%;
+ margin: 0;
+      }
+    }

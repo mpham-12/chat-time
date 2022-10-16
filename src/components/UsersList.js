@@ -8,10 +8,12 @@ import { useState } from 'react';
 
 
 const UsersList = (props) => {
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState('');
   const usersRef = collection(firestore, "users");
   const [users] = useCollectionData(usersRef, { idField: 'id' });
   const { currentUser } = useAuth();
+
+
 
   const searchHandler = (e) => {
     setSearch(e.target.value)

@@ -13,9 +13,9 @@
 	overflow: scroll;
 	position: relative;
 	height: 70%;
-  background-color: rgb(247, 247, 247);
+	background-color: rgb(247, 247, 247);
 	box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
-  border-radius: 12px;
+	border-radius: 12px;
 	/* display: flex;
 flex-direction: column; */
 }
@@ -26,16 +26,15 @@ flex-direction: column; */
 	/* border: 1px solid black; */
 	margin-top: 20px;
 	height: 22%;
-  width: 100%;
+	width: 100%;
 	border-radius: 12px;
 	background-color: none;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
 }
 
-
 .input {
-  height: 80%;
-  width: 90%;
+	height: 80%;
+	width: 90%;
 	border-radius: 12px 0px 0px 12px;
 	border: 1px solid transparent;
 	resize: none;
@@ -46,26 +45,37 @@ flex-direction: column; */
 	word-break: break-word;
 }
 
-.input:focus{
-  outline:none;
+.input:focus {
+	outline: none;
 }
 
 .sendIcon {
 	background-color: transparent;
 	height: 30px;
-  padding: 0px 15px;
-  /* margin-left: 5px; */
-
+	padding: 0px 15px;
+	/* margin-left: 5px; */
 }
 .sendBtn {
 	display: flex;
-  border-radius: 0px 12px 12px 0px;
+	border-radius: 0px 12px 12px 0px;
 	align-items: center;
 	justify-content: end;
 	background-color: rgb(57, 138, 97);
 	border: none;
 	color: white;
 }
-.sendBtn:hover{
-cursor: pointer;
+.sendBtn:hover {
+	cursor: pointer;
 }
+
+@media only screen and (max-width: 600px) {
+	.chatbox{
+		box-sizing: border-box;
+width: 90%;	
+margin-right: 0;
+height: 75%;
+border-top-left-radius:0 ;
+border-top-right-radius:0 ;
+
+}
+	}
