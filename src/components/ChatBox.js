@@ -1,18 +1,15 @@
 import classes from './ChatBox.module.css'
-import { auth, firestore } from '../firebase';
+import { firestore } from '../firebase';
 import { useAuth } from '../context/AuthContext';
 import send from '../images/send.png'
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { collection, orderBy, limit, query, setDoc, doc, serverTimestamp, where } from "firebase/firestore";
 import ChatMessage from './ChatMessage';
-import { useRef, useEffect, useState } from 'react';
-import { FirebaseError } from 'firebase/app';
+import { useRef, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 
 
 const ChatBox = (props) => {
-  const [selectedUser, setSelectedUser] = useState();
-
   const messagesRef = collection(firestore, "messages");
   const messagesQuery = query(messagesRef, where("chatroomId", "==", props.chatroomId), orderBy("createdAt", "asc"), limit(100));
   const [messages] = useCollectionData(messagesQuery, { idField: 'id' });
@@ -21,13 +18,12 @@ const ChatBox = (props) => {
   const bottomRef = useRef();
   const { currentUser } = useAuth();
 
-  useEffect(()=>{
+  useEffect(() => {
     bottomRef.current.scrollIntoView({ behavior: 'smooth' })
-  }, [messages])  
+  }, [messages])
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    // const createdAt = new Date().toLocaleString('en-US', { hour: "2-digit", minute: "2-digit" });
     const msgId = uuidv4();
 
     await setDoc(doc(messagesRef), {
@@ -46,18 +42,16 @@ const ChatBox = (props) => {
     <div className={classes.chatbox}>
       <div className={classes.chatDisplay}>
         {messages && messages.map((message) => {
-          return <ChatMessage 
-          key={message.msgId} 
-          message={message} />
+          return <ChatMessage
+            key={message.msgId}
+            message={message} />
         })}
         <div className='bottomOfChat' ref={bottomRef}></div>
       </div>
-      {/* <div className={classes.textbox}> */}
       <form className={classes.textbox} onSubmit={submitHandler}>
-        <textarea type="text" className={classes.input} ref={inputRef} placeholder="Type your message..."/>
-        <button className={classes.sendBtn} type="submit"><img className={classes.sendIcon} src={send} alt=""/></button>
+        <textarea type="text" className={classes.input} ref={inputRef} placeholder="Type your message..." />
+        <button className={classes.sendBtn} type="submit"><img className={classes.sendIcon} src={send} alt="" /></button>
       </form>
-      {/* </div> */}
     </div>
   );
 }

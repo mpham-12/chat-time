@@ -12,7 +12,7 @@ const Signup = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const usersDb= collection(firestore, "users");
+  const usersDb = collection(firestore, "users");
   const [users] = useCollectionData(usersDb);
 
   const userRef = useRef();
@@ -25,7 +25,6 @@ const Signup = () => {
 
   async function handleSubmit(e) {
     e.preventDefault();
-console.log('users', users)
     const findExistingUserName = users.find(user => user.username === userRef.current.value)
 
     if (passRef.current.value !== confirmPassRef.current.value) {
@@ -54,7 +53,6 @@ console.log('users', users)
       });
       navigate('/login');
     } catch (e) {
-      console.log(e)
       setError('Failed to create an account');
     }
     setLoading(false)
@@ -85,7 +83,6 @@ console.log('users', users)
           <button disabled={loading} className={classes.createAccBtn}>Create Account</button>
         </div>
       </form>
-
     </section>
   );
 }

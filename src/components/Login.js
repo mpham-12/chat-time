@@ -1,4 +1,4 @@
-import {useRef, useState} from 'react';
+import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
@@ -10,14 +10,11 @@ const Login = () => {
 
   const emailRef = useRef();
   const passwordRef = useRef();
-  
   const { login } = useAuth();
-
   const navigate = useNavigate()
 
   async function submitHandler(event) {
     event.preventDefault()
-
     try {
       setError('');
       setIsLoading(true);
@@ -36,11 +33,11 @@ const Login = () => {
       {error && <p className={classes.error}>{error}</p>}
       <form className={classes.form} onSubmit={submitHandler}>
         <label htmlFor="email" className={classes.label}>E-mail</label>
-        <input className={classes.input} type="email" ref={emailRef}/>
+        <input className={classes.input} type="email" ref={emailRef} />
         <label htmlFor="password" className={classes.label}>Password</label>
         <input className={classes.input} type="password" ref={passwordRef} />
         <div className={classes.createAcc}>
-        <button disabled={isLoading} className={classes.createAccBtn}>Log in</button>
+          <button disabled={isLoading} className={classes.createAccBtn}>Log in</button>
         </div>
       </form>
       <a className={classes.signup} id={classes.forgotPassword} href="/forgot-password">Forgot password?</a>

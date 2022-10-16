@@ -1,81 +1,77 @@
-nav{
-  display: flex;
-  background-color: rgb(20,52,44);
-  border-bottom: 1px solid rgb(140,148,135);
-  position: fixed;
-  right: 0;
-  left: 0;
-  margin-right: auto;
-  margin-left: auto;
-  width: 95%;
-  z-index: 10;
+nav {
+	display: flex;
+	background-color: rgb(20, 52, 44);
+	border-bottom: 1px solid rgb(140, 148, 135);
+	position: fixed;
+	right: 0;
+	left: 0;
+	margin-right: auto;
+	margin-left: auto;
+	width: 95%;
+	z-index: 10;
 }
 
-.navMiddle{
-  display: flex;
-  justify-content: center;
-  width: 33%;
+.navMiddle {
+	display: flex;
+	justify-content: center;
+	width: 33%;
 }
-.navRight{
-  display: flex;
-  justify-content: end;
-  width: 33%;
+.navRight {
+	display: flex;
+	justify-content: end;
+	width: 33%;
 }
-.navLeft{
-  display: flex;
-  justify-content: start;
-  width: 33%;
-}
-
-.navName{
-color: rgb(204,209,190);
-font-family: 'Reem Kufi Fun', sans-serif;
+.navLeft {
+	display: flex;
+	justify-content: start;
+	width: 33%;
 }
 
-.navAnchor{
-  text-decoration: none;
+.navName {
+	color: rgb(204, 209, 190);
+	font-family: 'Reem Kufi Fun', sans-serif;
 }
 
-.navLinks{
-  display: flex;
-flex-direction: row;
-list-style: none;
-align-items: center;
+.navAnchor {
+	text-decoration: none;
 }
 
-.displayName{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  color: rgb(204,209,190);
-margin-left: 20px;
-font-size: 18px;
+.navLinks {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	align-items: center;
 }
 
-.navLink{
-  margin-right: 10px;
-  color: rgb(204,209,190);
+.displayName {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	color: rgb(204, 209, 190);
+	margin-left: 20px;
+	font-size: 18px;
 }
 
-#logout{
-  background-color: transparent;
-  border: none;
-  font-size: 16px;
-  font-family: 'Lato', sans-serif;
-  color: rgb(204,209,190);
-
+.navLink {
+	margin-right: 10px;
+	color: rgb(204, 209, 190);
 }
 
-
-
-
-  @media only screen and (max-width: 600px) {
-    .navAnchor{
-display: flex;
-align-items: center;
+#logout {
+	background-color: transparent;
+	border: none;
+	font-size: 16px;
+	font-family: 'Lato', sans-serif;
+	color: rgb(204, 209, 190);
 }
-    .navName{
- font-size: 120%;
- margin: 0;
-      }
-    }
+
+@media only screen and (max-width: 600px) {
+	.navAnchor {
+		display: flex;
+		align-items: center;
+	}
+	.navName {
+		font-size: 120%;
+		margin: 0;
+	}
+}

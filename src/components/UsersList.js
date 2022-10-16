@@ -1,11 +1,9 @@
 import classes from './UsersList.module.css'
 import { firestore } from '../firebase';
-import { collection} from "firebase/firestore";
+import { collection } from "firebase/firestore";
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { useAuth } from '../context/AuthContext';
 import { useState } from 'react';
-
-
 
 const UsersList = (props) => {
   const [search, setSearch] = useState('');
@@ -13,20 +11,14 @@ const UsersList = (props) => {
   const [users] = useCollectionData(usersRef, { idField: 'id' });
   const { currentUser } = useAuth();
 
-
-
   const searchHandler = (e) => {
     setSearch(e.target.value)
   }
 
-console.log(currentUser)
-
   return (
-  
     <div className={classes.list}>
       <div className={classes.usersHeader}>
         <p className={classes.liveChat}>Users</p>
-        {/* <h2 className={classes.displayName}>{currentUser.displayName}</h2> */}
       </div>
       <form className={classes.form}>
         <div className={classes.search}>
@@ -36,7 +28,7 @@ console.log(currentUser)
       <div className={classes.users}>
 
         {currentUser && users && users.filter((user) => {
-          if(!search) {
+          if (!search) {
             return user
           }
           if (user.username.toLowerCase().includes(search.toLowerCase())) {
@@ -46,14 +38,13 @@ console.log(currentUser)
           if (user.username === currentUser.displayName) {
             return null
           }
-          return <div 
-          key={user.username} 
-          tabIndex="0" 
-          className={classes.user}
-          onClick={() => {props.onSelectUser(currentUser.displayName, user.username)}}
+          return <div
+            key={user.username}
+            tabIndex="0"
+            className={classes.user}
+            onClick={() => { props.onSelectUser(currentUser.displayName, user.username) }}
           >{user.username.charAt(0).toUpperCase() + user.username.slice(1)}</div>
         })}
-
 
       </div>
     </div>

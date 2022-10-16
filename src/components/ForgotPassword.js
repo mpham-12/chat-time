@@ -1,6 +1,5 @@
-import {useRef, useState} from 'react';
+import { useRef, useState } from 'react';
 import { useAuth } from '../context/AuthContext';
-
 import classes from './ForgotPassword.module.css'
 
 const ForgotPassword = () => {
@@ -9,16 +8,13 @@ const ForgotPassword = () => {
   const [message, setMessage] = useState('');
 
   const emailRef = useRef();
-  
   const { forgotPassword } = useAuth();
 
   async function submitHandler(event) {
     event.preventDefault()
-
     if (!emailRef.current.value.includes('@')) {
       return setError('Email must contain an "@" symbol')
     }
-
     try {
       setError('');
       setMessage('');
@@ -40,10 +36,9 @@ const ForgotPassword = () => {
       {error && <p className={classes.error}>{error}</p>}
       <form className={classes.form} onSubmit={submitHandler}>
         <label htmlFor="email" className={classes.label}>E-mail</label>
-        <input className={classes.input} type="text" ref={emailRef}/>
-
+        <input className={classes.input} type="text" ref={emailRef} />
         <div className={classes.resetPass}>
-        <button disabled={isLoading} className={classes.resetBtn}>Reset Password</button>
+          <button disabled={isLoading} className={classes.resetBtn}>Reset Password</button>
         </div>
       </form>
       <a href="/login"><p className={classes.signup} id={classes.getStarted}>Login here</p></a>

@@ -56,21 +56,25 @@
 	border-radius: 25px;
 	margin-top: 15px;
 }
+
 .createAccBtn:hover {
 	cursor: pointer;
 }
+
 .createAcc {
 	text-align: center;
 }
+
 #title {
 	margin-top: 150px;
 }
+
 #forgotPassword {
 	color: white;
-  font-weight: 300;
+	font-weight: 300;
 }
 
-.error{
-  color: #ccd1be;
-  font-weight: 300;
-  }
+.error {
+	color: #ccd1be;
+	font-weight: 300;
+}

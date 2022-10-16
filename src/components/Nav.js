@@ -11,10 +11,10 @@ const Nav = () => {
   const logoutHandler = async () => {
     setError('')
     try {
-      await logout()
-      navigate('/login')
+      await logout();
+      navigate('/login');
     } catch {
-      setError('Failed to logout')
+      setError('Failed to logout');
     }
   }
 
@@ -22,7 +22,7 @@ const Nav = () => {
     <nav>
       <div className={classes.navLeft}>
         {currentUser && <p className={classes.displayName}>{currentUser.displayName}</p>}
-</div>
+      </div>
       <div className={classes.navMiddle}>
         <a href="/" className={classes.navAnchor}><h1 className={classes.navName}>Chat Time</h1></a>
       </div>

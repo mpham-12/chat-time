@@ -5,10 +5,10 @@ import EmptyChat from './EmptyChat'
 import classes from './Chat.module.css'
 import { v4 as uuidv4 } from 'uuid';
 
-import { auth, firestore } from '../firebase';
+import { firestore } from '../firebase';
 import { useState } from 'react';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
-import { collection, orderBy, limit, query, setDoc, doc, serverTimestamp, getDocs } from "firebase/firestore";
+import { collection, setDoc, doc} from "firebase/firestore";
 
 
 const Chat = () => {
@@ -42,7 +42,6 @@ const Chat = () => {
         user2: user2,
       });
       return setChatroomId(newChatroomId)
-      console.log('GOT USERS')
     }
   }
 
@@ -52,8 +51,6 @@ const Chat = () => {
         <UsersList onSelectUser={selectUserHandler} />
         {chatroomId ? <ChatBox chatroomId={chatroomId}/> : <EmptyChat/>}
       </div>}
-
-
     </section>
   );
 }

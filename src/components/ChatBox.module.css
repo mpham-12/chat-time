@@ -1,6 +1,5 @@
 .chatbox {
 	background-color: rgb(255, 255, 255);
-	/* background-color: rgb(254, 247, 237); */
 	border-radius: 12px;
 	height: 90%;
 	width: 60%;
@@ -16,14 +15,11 @@
 	background-color: rgb(247, 247, 247);
 	box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px;
 	border-radius: 12px;
-	/* display: flex;
-flex-direction: column; */
 }
 
 .textbox {
 	display: flex;
 	flex-direction: row;
-	/* border: 1px solid black; */
 	margin-top: 20px;
 	height: 22%;
 	width: 100%;
@@ -53,8 +49,8 @@ flex-direction: column; */
 	background-color: transparent;
 	height: 30px;
 	padding: 0px 15px;
-	/* margin-left: 5px; */
 }
+
 .sendBtn {
 	display: flex;
 	border-radius: 0px 12px 12px 0px;
@@ -64,18 +60,18 @@ flex-direction: column; */
 	border: none;
 	color: white;
 }
+
 .sendBtn:hover {
 	cursor: pointer;
 }
 
 @media only screen and (max-width: 600px) {
-	.chatbox{
+	.chatbox {
 		box-sizing: border-box;
-width: 90%;	
-margin-right: 0;
-height: 75%;
-border-top-left-radius:0 ;
-border-top-right-radius:0 ;
-
-}
+		width: 90%;
+		margin-right: 0;
+		height: 75%;
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
 	}
+}
