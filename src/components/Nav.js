@@ -22,7 +22,7 @@ const Nav = () => {
     <nav>
       <div className={classes.navLeft}></div>
       <div className={classes.navMiddle}>
-        <a href="/" className={classes.navAnchor}><h1 className={classes.navName}>Better Health</h1></a>
+        <a href="/" className={classes.navAnchor}><h1 className={classes.navName}>Chat Time</h1></a>
       </div>
       <div className={classes.navRight}>
         <ul className={classes.navLinks}>
