@@ -20,7 +20,9 @@ const Nav = () => {
 
   return (
     <nav>
-      <div className={classes.navLeft}></div>
+      <div className={classes.navLeft}>
+        <p className={classes.displayName}>{currentUser.displayName.charAt(0).toUpperCase() + currentUser.displayName.slice(1)}</p>
+      </div>
       <div className={classes.navMiddle}>
         <a href="/" className={classes.navAnchor}><h1 className={classes.navName}>Chat Time</h1></a>
       </div>

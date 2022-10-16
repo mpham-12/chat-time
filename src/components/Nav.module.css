@@ -23,7 +23,7 @@ nav{
 }
 .navLeft{
   display: flex;
-  justify-content: end;
+  justify-content: start;
   width: 33%;
 }
 
@@ -41,6 +41,15 @@ font-family: 'Reem Kufi Fun', sans-serif;
 flex-direction: row;
 list-style: none;
 align-items: center;
+}
+
+.displayName{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: rgb(204,209,190);
+margin-left: 20px;
+font-size: 18px;
 }
 
 .navLink{

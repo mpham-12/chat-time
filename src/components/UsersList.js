@@ -23,8 +23,8 @@ console.log(currentUser)
   
     <div className={classes.list}>
       <div className={classes.usersHeader}>
-        <p className={classes.liveChat}>Live Chat</p>
-        <h2 className={classes.displayName}>{currentUser.displayName}</h2>
+        <p className={classes.liveChat}>Users</p>
+        {/* <h2 className={classes.displayName}>{currentUser.displayName}</h2> */}
       </div>
       <form className={classes.form}>
         <div className={classes.search}>
@@ -49,7 +49,7 @@ console.log(currentUser)
           tabIndex="0" 
           className={classes.user}
           onClick={() => {props.onSelectUser(currentUser.displayName, user.username)}}
-          >{user.username}</div>
+          >{user.username.charAt(0).toUpperCase() + user.username.slice(1)}</div>
         })}
 
 
