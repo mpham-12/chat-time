@@ -1,6 +1,7 @@
 import { useAuth } from '../context/AuthContext';
 import UsersList from './UsersList'
 import ChatBox from './ChatBox'
+import EmptyChat from './EmptyChat'
 import classes from './Chat.module.css'
 import { v4 as uuidv4 } from 'uuid';
 
@@ -49,8 +50,8 @@ const Chat = () => {
     <section className={classes.chat}>
       <div className={classes.chatbox}>
         <UsersList onSelectUser={selectUserHandler} />
-        <ChatBox chatroomId={chatroomId} />
-        {/* {chatroomId && <ChatBox chatroomId={chatroomId} />} */}
+        {/* <ChatBox chatroomId={chatroomId} /> */}
+        {chatroomId ? <ChatBox chatroomId={chatroomId}/> : <EmptyChat/>}
       </div>
 
       {!currentUser && <p>you must be logged in to use better health</p>}

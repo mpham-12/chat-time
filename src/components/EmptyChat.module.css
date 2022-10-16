@@ -1,0 +1,17 @@
+.emptyMsg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  width: 65%;
+  height: 93%;
+  background-color: white;
+  margin-right: 15px;
+  box-shadow: rgb(0 0 0 / 20%) 0px 4px 12px;
+}
+
+.msg{
+font-size: 25px;
+color: rgb(20,52,44);
+font-weight: 600;
+}
